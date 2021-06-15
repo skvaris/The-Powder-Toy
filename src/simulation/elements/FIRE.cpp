@@ -167,6 +167,17 @@ int Element_FIRE_update(UPDATE_FUNC_ARGS)
 					continue;
 				}
 
+				if (rt==PT_BMAS)
+				{
+					if (t==PT_FIRE)
+					{
+						if (parts[ID(r)].life>100 && RNG::Ref().chance(1, 20))
+						{
+							parts[ID(r)].life -= 1;
+						}
+					}
+				}
+
 				if ((rt==PT_COAL) || (rt==PT_BCOL))
 				{
 					if ((t==PT_FIRE || t==PT_PLSM))
